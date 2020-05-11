@@ -18,7 +18,11 @@ class CreateLoansTable extends Migration
 
             $table->unsignedBigInteger('user_id')->unsigned();
 
+            $table->unsignedBigInteger('loan_id')->unsigned();
+
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->foreign('loan_id')->references('id')->on('loans')->onDelete('cascade');
 
             $table->integer('amount');
 

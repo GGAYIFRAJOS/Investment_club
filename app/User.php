@@ -47,4 +47,34 @@ class User extends Authenticatable
 
         $this->belongsTo('App\Role');
     }
+
+    public function savings(){
+
+        $this->hasMany('App\Saving');
+    }
+
+    public function loans(){
+        $this->hasMany('App\Loan');
+    }
+
+    public function balances(){
+
+        $this->hasMany('App\Balance');
+    }
+
+    public function fines(){
+        
+        $this->hasMany('App\Fine');
+    }
+
+    
+
+    public function(){
+        $this->hasOne('App\Total_balance');
+    }
+
+
+    public function(){
+        $this->hasOne('App\Total_fine');
+    }
 }
